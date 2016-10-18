@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Kubernetes PaaS - Openshift</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<style>
+	* { font-family: Raleway !important; }
+	.reveal h2 {
+		font-weight: 300 !important;
+	    background: #d22933;
+	    color: white;
+	    padding: .2em;
+	    font-size: 1.2em !important;
+	}
+	.reveal a {
+	    color: #db242f !important;
+	}
+	.reveal a:hover {
+	    color: #96171f !important;
+	}
+	ul{
+		position: relative;
+	}
+	ul li{
+		list-style: none;
+	}
+	ul li::before{
+		content: '-';
+	    position: absolute;
+	    left: -30px;
+	}
+	</style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+	<section>
+	  <h2>Kubernetes PaaS - Openshift</h2>
+	  	<a href="img/openshift-logo.png">
+	    	<img src="img/openshift-logo.png" class="plain" width="250px" />
+	    </a>
+	  <p><a href="http://franbarrera.me">Fran Barrera</a></p>
+	  <p><small><a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a></small></p> 
+	</section>
+	<section>
+	  <section>
+	    <h2>¿Qué es Openshift?</h2>
+	    <ul>
+	    	<li>PaaS</li>
+	    	<li>Despliegue de aplicaciones en contenedores</li>
+	    	<li>Creado por Red Hat</li>
+	    	<li>OpenSource (+14k commits)</li>
+	  </section>
+	  <section>
+	  <h2> Añadidos de Openshift</h2>
+	  <ul>
+	  	<li> API </li>
+	  	<li> Templates </li>
+	  	<li> Build </li>
+	  	<li> Autenticación </li>
+		<li> OC </li>
+	  	<li> Consola Web </li>
+	  	<li> Router </li>
+	  	<li> Devops </li>
+	  </ul>
+	  </section>
+	  <section>
+	  <h2> API </h2>
+	   <ul>
+		<li>Kubernetes API - https://master:8443/api</li>
+		<li>Openshift API  - https://master:8443/oapi</li>
+ 		</ul>
+	  </section>
+	  <section>
+	  <h2> Templates </h2>
+	  <ul>
+	  	<li> Fichero escritos en JSON o YAML </li>
+	  	<li> Conjunto de objetos parametrizables</li>
+	  	<li> Permite añadir labels</li>
+	  </ul>
+	  </section>
+	  <section>
+	  <h2> Templates </h2>
+	    <a href="img/template.png">
+	      <img src="img/template.png" class="plain" width="400px" />
+	    </a>
+	  </section>
+	  <section>
+	  <h2> Build</h2>
+	  <ul>
+	  	<li> Sourte-To-Image (S2I)</li>
+	  	<li> Docker</li>
+	  </ul>
+	  </section>
+	  <section>
+	  <h2> Build </h2>
+	    <a href="img/build-workf
+	    low.png">
+	      <p><img src="img/build-workflow.png" class="plain" width="800px" />
+	    </a>
+	  </section>
+	  <section>
+	  	  <h2> Autenticación </h2>
+		<ul>
+			<li> HTPasswd </li>
+			<li> LDAP </li>
+			<li> Github </li>
+			<li> Google </li>
+			<li> OpenID </li>
+		</ul>
+	    <a href="img/autenticacion.png">
+	      <p><img src="img/autenticacion.png" class="plain" width="350px" />
+	    </a>
+	  </section>
+	  <section>
+	    <h2> Openshift Client </h2>
+	    <a href="img/oc_client.png">
+	      <img src="img/oc_client.png" class="plain" width="800px" />
+	    </a>
+	  </section>
+	  <section>
+	  <h2>Consola Web</h2>
+	    <a href="img/openshift-web_console.png">
+	      <img src="img/openshift_web-console.png" class="plain" width="800px" />
+	    </a>
+	  </section>
+	  <section>
+	  <h2> Router </h2>
+	  <ul>
+	  	<li> Entrada externa hacia los servicios </li> 
+	  	<li> Balanceo de carga </li>
+	  </ul>
+	  </section>
+	  <section>
+	  	  <h2> Devops </h2>
+	  	  	<p>Jenkins</p>
+	    <a href="img/jenkins2.png">
+	      <img src="img/jenkins2.png" class="plain" width="600px" />
+	    </a>
+	  </section>
+	</section>
+	<section>
+	  <section>
+	    <h2>Métodos de instalación</h2>
+	    	<ul>
+	    		<li> Oc cluster up </li>
+	    		<li> Minishift </li>
+	    		<li> Ansible </li>
+	  </section>
+	  <section>
+	    <h2> oc cluster up</h2>
+	    <ul>
+	      <li>Instalar Docker</li>
+	      <li> Configurar insecure registry y reiniciar docker </li>
+	      	<pre>/etc/sysconfig/docker <br> <br>INSECURE_REGISTRY='--insecure-registry 172.30.0.0/16' </pre>
+	      <li>Descargar oc <p><a href="https://github.com/openshift/origin/releases/latest">Github.com/openshift/origin/releases/latest</a></p> </li>
+	      <li>Ejecutar y eliminar</li>
+	      <pre> # oc cluster up / # oc cluster down </pre>
+	    </ul>
+	  </section>
+	  <section>
+	    <h2> Minishift </h2>
+	    	<p> Herramienta creada como Minikube </p>
+	    <ul>
+	      <li>Instalar Virtualbox, KVM, Hyperv...</li>
+	      <li>Descargar Minishift</li>
+	      <p> <a href="https://github.com/jimmidyson/minishift/releases"> Github.com/jimmidyson/minishift/releases/latest</a> <p/>
+	      <pre> # minishift start / # minishift stop </pre>
+	    </ul>
+	  </section>
+	  <section>
+	    <h2> Ansible </h2>
+	    	<ul>
+	    		<li>Instalaciones en HA</li>
+	    		<li>Actualizaciones</li>
+	    <a href="ansible_simple.png">
+	      <p><img src="img/ansible_simple.png" class="plain" width="600px" />
+	    </a>
+	  </section>
+	</section>
+	  <section>
+	    <h2>Integraciones con cloud</h2>
+	    <ul>
+	    	<li>Openstack</li>
+	    	<li>AWS</li>
+	    	<li>GCE</li>
+	    </ul>
+	  </section>
+	  <section>
+	    <h2>DEMO</h2>
+	  </section>
+	  <section>
+	    <h2>¿Preguntas?</h2>
+	    	<a href="https://twitter.com/franbarrera6">
+	      		<p><img src="img/twitter.png" class="plain" width="400px" />
+	    	</a>
+	  </section>
+      </div>
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true }
+      ]
+      });
+
+    </script>
+
+  </body>
+</html>
